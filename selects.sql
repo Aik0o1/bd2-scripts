@@ -1,5 +1,6 @@
 USE lojaConstrucaoAnalitico;
 
+-- Utilizado no K-means
 -- seleção para clientes, suas compras e onde foram feitas
 SELECT 
     c.id_cliente,
@@ -15,6 +16,7 @@ JOIN
 GROUP BY 
     c.id_cliente, c.nome, c.cidade, c.estado;
 
+-- Utilizado no K-means
 -- seleção para produtos, suas categorias, total de vendas e receita gerada
 SELECT 
     dc.nome_categoria,
@@ -31,7 +33,8 @@ GROUP BY
     dc.nome_categoria, dp.nome
 ORDER BY 
     receita_gerada DESC;
-    
+
+-- Utilizado na regressão linear
 -- seleção para informaçoes de compra de produto, quantidade comprada, valor total, preco individual do produto, ano e estado onde foi comprado 
 SELECT 
     fp.quantidade_total,
